@@ -62,7 +62,8 @@ This problem is actually lengthOfLongestSubstringTwoDistinct
 5) if yes, calculate the max_count until now and then start removing the extra value
    in the oder of insertion. To calculate max_count = max(max_count, index - start)
 6) Here start pointer is used to remove keys in the order it was inserted to match
-   the hash map count to unique count
+   the hash map count to unique count. The start pointer also helps in calculating the
+   length of unique count
 7) Keep moving the window where start pointer indicates start of the window and
    index i indicates current value
 8) Once the loop is over , return max(max_count, tree_len - start)
