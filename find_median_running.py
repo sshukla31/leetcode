@@ -1,3 +1,18 @@
+'''
+Find median of running data stream in sorted order
+
+1) Create 2 buckets lowers and highers
+2) Use the first element as pivot and insert into lower
+3) the buckets lowert and highers are heaps,
+    lowers - max_heap
+    highers - min_heap
+4) after adding the numbers/number rebalance() to maintain equal amount of elements
+   in both lowers and highers,
+   1) for odd case, one of the buckets will have extra element
+   2) for even case, it will be equal number of elements
+'''
+
+
 from Queue import PriorityQueue
 
 
