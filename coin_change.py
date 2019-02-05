@@ -47,7 +47,7 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
-        # We will bottom-up approach
+        # We will use bottom-up approach
 
         # STEP 1:  Create an array dp to represent min coin required for each coin amount
         # First we will calculate best possible answer for each amount upto final amount
@@ -84,9 +84,32 @@ class Solution(object):
             return dp[amount]
 
 
+    def coinChangeTD(self, coins, amount):
+        """
+        This is a top down approach
+        :type coins: List[int]
+        :type amount: int
+        :rtype: int
+        """
+        if amount == 0 or amount < min(coins):
+            return 0
+        elif amount in coins:
+            return 1
+        else:
+            return (
+                min(self.coinChangeTD(coins, amount - coin) for coin in coins if coin < amount) + 1
+            )
+
 sol = Solution()
 coins = [1, 2, 5]
 amount = 11
 expected_result = 3
+
+# Bottom-up approach
 actual_result = sol.coinChange(coins, amount)
+assert actual_result == expected_result
+
+
+# Top Down approach
+actual_result = sol.coinChangeTD(coins, amount)
 assert actual_result == expected_result
