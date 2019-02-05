@@ -28,6 +28,16 @@ Refer:
 https://www.youtube.com/watch?v=jgiZlGzXMBw
 
 I used bottom-up approach
+
+A is the amount to make change for.
+
+n is the total denominations avaliable to make change with.
+
+Time: O( A * n )
+
+For each amount we will potentially try each of the denominations (there are n of them).
+
+Space: O( A )
 '''
 
 class Solution(object):
